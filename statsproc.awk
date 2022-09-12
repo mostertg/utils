@@ -8,9 +8,10 @@ function dt2epoch(date,    timestr) {
   return mktime(timestr)
 }
 
-function epoch2hms(e) {
-  return strftime("%H:%M:%S", e, 1)
-}
+# DEPRECATED: not used, to be removed
+# function epoch2hms(e) {
+#   return strftime("%H:%M:%S", e, 1)
+# }
 
 function abs(n) {
   return n < 0 ? -1 * n : n
