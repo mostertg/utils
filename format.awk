@@ -16,6 +16,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# +---------------------------------------------------------------------------------------------+
+# | Utility to format USSD CDR dates.                                                           |
+# |                                                                                             |
+# | USAGE: awk -f [PROGNAME]  [DATA]                                                            |
+# |                                                                                             |
+# | VERSION: 1.0                                                                                |
+# +---------------------------------------------------------------------------------------------+
+
 
 BEGIN {
   FS=","
