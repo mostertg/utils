@@ -1,5 +1,5 @@
 #!/usr/bin/mawk -f
-# USAGE: ./session-stats.awk -v serv_class=[1,6]
+# USAGE: ./session-stats.awk -v class=[1,6]
 #
 # Copyright (c) 2022 Giovanni Mostert. All rights reserved.
 #
@@ -43,6 +43,6 @@ function dt2epoch(dt,    timestr) {
 
 END {
   for(code in s_len) {
-    print serv_class, code, s_count[code], s_bill[code], s_exch[code] / s_count[code], s_len[code], s_len[code] / s_count[code]
+    print class, code, s_count[code], s_bill[code], s_exch[code] / s_count[code], s_len[code], s_len[code] / s_count[code]
   }
 }
