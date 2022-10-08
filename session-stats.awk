@@ -18,23 +18,16 @@
 
 BEGIN {
   FS=OFS=","
+  class=1
   exch=7;
   bill=8;
   wasp_code=10
 }
 
-function abs(n) {
-  return n < 0 ? -1 * n : n
-}
-
-function dt2epoch(dt,    timestr) {
-  timestr = substr(dt,1,4) " " substr(dt,5,2) " " substr(dt,7,2) " " substr(dt,9,2) " " substr(dt,11,2) " " substr(dt,13,2)
-  return mktime(timestr) + (substr(dt,16,3)/1000)
-}
-
 {
-  # print $10, $9, dtfmt($5), dtfmt($6), abs(dt2epoch($6) - dt2epoch($5))
-  # g_wasp[$wasp_code]
+  if(length(class) != 0) {
+    $1=class
+  }
   s_exch[$wasp_code] += $exch
   s_bill[$wasp_code] += ($bill / 100.0);
   s_len[$wasp_code] += abs(dt2epoch($6) - dt2epoch($5));
