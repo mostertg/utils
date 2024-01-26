@@ -34,9 +34,14 @@ BEGIN {
   if(length(class) != 0) {
     $1=class
   }
-  $5=substr($5,1,4)"-"substr($5,5,2)"-"substr($5,7,2)" "substr($5,9,2)":"substr($5,11,2)":"substr($5,13,2)"."substr($5,16,3);
-  $6=substr($6,1,4)"-"substr($6,5,2)"-"substr($6,7,2)" "substr($6,9,2)":"substr($6,11,2)":"substr($6,13,2)"."substr($6,16,3);
-  print $0
+  # if(NR==1) {
+  #   print $0
+  # }
+  else {
+    $5=substr($5,1,4)"-"substr($5,5,2)"-"substr($5,7,2)" "substr($5,9,2)":"substr($5,11,2)":"substr($5,13,2)"."substr($5,16,3);
+    $6=substr($6,1,4)"-"substr($6,5,2)"-"substr($6,7,2)" "substr($6,9,2)":"substr($6,11,2)":"substr($6,13,2)"."substr($6,16,3);
+    print $0
+  }
 }
 
 END {
